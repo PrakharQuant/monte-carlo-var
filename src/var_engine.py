@@ -71,8 +71,11 @@ def run_monte_carlo(
 
     weights = np.array(weights)
     weights = weights / weights.sum()          # guarantee sum = 1
-    mean_arr = mean_returns.values             # numpy array for speed
+    mean_arr = mean_returns.values
     cov_arr  = cov_matrix.values
+# Regularise: add small epsilon to diagonal to ensure positive definiteness
+# This prevents SVD/Cholesky failures on near-singular covariance matrices
+    cov_arr  = cov_arr + np.eye(len(mean_arr)) * 1e-8
 
     portfolio_sims = np.empty((T, mc_sims))
 
