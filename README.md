@@ -1,10 +1,20 @@
 # Monte Carlo VaR — Indian Equity Portfolio Risk Simulator
 
+# Monte Carlo VaR — Indian Equity Portfolio Risk Simulator
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://montecarlovar.streamlit.app)
+![Python](https://img.shields.io/badge/python-3.9+-3776AB?style=flat&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/streamlit-1.35+-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-1.26+-013243?style=flat&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-2.1+-150458?style=flat&logo=pandas&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-48BB78?style=flat)
+![Status](https://img.shields.io/badge/status-live-48BB78?style=flat)
+
 An interactive risk analytics platform for NSE-listed equity portfolios built with Python and Streamlit.
 The project is structured in two layers: a mathematical foundations module that builds intuition
 interactively, and a finance module that applies those concepts to real market data and industry-standard risk metrics.
 
-**Live App →** [montecarlovar.streamlit.app](https://montecarlovar.streamlit.app)
+
 
 ---
 
