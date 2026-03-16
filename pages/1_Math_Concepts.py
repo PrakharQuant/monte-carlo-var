@@ -172,20 +172,20 @@ with tab2:
         for ax in axes:
             fig.patch.set_facecolor(BG)
             ax.set_facecolor(BG)
-            ax.tick_params(colors="#4a5568")
+            ax.tick_params(colors="#a0aec0")
             for sp in ax.spines.values():
                 sp.set_edgecolor(GREY)
 
         axes[0].scatter(samples[:,0], samples[:,1], s=8, alpha=0.35, color=BLUE)
         axes[0].set_title(f"Correlated Returns (ρ = {rho:.2f})", color="#cbd5e0")
-        axes[0].set_xlabel("Asset A return", color="#4a5568")
-        axes[0].set_ylabel("Asset B return", color="#4a5568")
+        axes[0].set_xlabel("Asset A return", color="#a0aec0")
+        axes[0].set_ylabel("Asset B return", color="#a0aec0")
 
         hm = np.array([[s1**2, cov12], [cov12, s2**2]])
         axes[1].imshow(hm, cmap="RdBu_r", aspect="auto")
         axes[1].set_xticks([0,1]); axes[1].set_yticks([0,1])
-        axes[1].set_xticklabels(["Asset A","Asset B"], color="#4a5568", fontsize=9)
-        axes[1].set_yticklabels(["Asset A","Asset B"], color="#4a5568", fontsize=9)
+        axes[1].set_xticklabels(["Asset A","Asset B"], color="#a0aec0", fontsize=9)
+        axes[1].set_yticklabels(["Asset A","Asset B"], color="#a0aec0", fontsize=9)
         axes[1].set_title("Covariance Matrix", color="#cbd5e0")
         for i in range(2):
             for j in range(2):
@@ -196,10 +196,10 @@ with tab2:
         plt.close()
 
     st.markdown("""
-    **Key insight:** The covariance matrix is the heart of multi-asset simulation.
-    When markets crash, correlations between stocks typically spike toward +1,
-    which means Monte Carlo VaR built on calm-period correlations can
-    underestimate tail risk during stress events — a fundamental model limitation.
+    **Design note:** The covariance matrix encodes both individual volatility and inter-asset 
+co-movement. In crisis periods, correlations between NSE large-caps historically spike 
+toward +1 — meaning the simulation's calm-period covariance matrix will underestimate 
+tail risk. This is a known and intentional limitation of the parametric Monte Carlo approach.
     """)
 
 
@@ -314,13 +314,13 @@ with tab4:
         fig, axes = plt.subplots(1, 2, figsize=(11, 4.5))
         for ax in axes:
             fig.patch.set_facecolor(BG); ax.set_facecolor(BG)
-            ax.tick_params(colors="#4a5568", labelsize=7)
+            ax.tick_params(colors="#a0aec0", labelsize=7)
             for sp in ax.spines.values(): sp.set_edgecolor(GREY)
 
         im = axes[0].imshow(corr_m, cmap="RdYlGn", vmin=-1, vmax=1, aspect="auto")
         axes[0].set_xticks(range(5)); axes[0].set_yticks(range(5))
-        axes[0].set_xticklabels(names, color="#4a5568", fontsize=8)
-        axes[0].set_yticklabels(names, color="#4a5568", fontsize=8)
+        axes[0].set_xticklabels(names, color="#a0aec0", fontsize=8)
+        axes[0].set_yticklabels(names, color="#a0aec0", fontsize=8)
         axes[0].set_title("Correlation Structure", color="#cbd5e0")
         for i in range(5):
             for j in range(5):
@@ -329,8 +329,8 @@ with tab4:
 
         axes[1].scatter(samples[:,0], samples[:,1], s=5, alpha=0.25, color=BLUE)
         axes[1].set_title(f"RELIANCE vs TCS (ρ={corr_m[0,1]:.2f})", color="#cbd5e0")
-        axes[1].set_xlabel("RELIANCE return", color="#4a5568")
-        axes[1].set_ylabel("TCS return", color="#4a5568")
+        axes[1].set_xlabel("RELIANCE return", color="#a0aec0")
+        axes[1].set_ylabel("TCS return", color="#a0aec0")
 
         plt.tight_layout(); st.pyplot(fig); plt.close()
 
@@ -396,25 +396,25 @@ with tab5:
             fig, axes = plt.subplots(1, 2, figsize=(10, 4.5))
             for ax in axes:
                 fig.patch.set_facecolor(BG); ax.set_facecolor(BG)
-                ax.tick_params(colors="#4a5568")
+                ax.tick_params(colors="#a0aec0")
                 for sp in ax.spines.values(): sp.set_edgecolor(GREY)
 
             axes[0].scatter(Z2[0], Z2[1], s=4, alpha=0.18, color="#718096")
             axes[0].set_title("Independent Z ~ N(0, I)", color="#cbd5e0")
-            axes[0].set_xlabel("Z₁", color="#4a5568"); axes[0].set_ylabel("Z₂", color="#4a5568")
+            axes[0].set_xlabel("Z₁", color="#a0aec0"); axes[0].set_ylabel("Z₂", color="#a0aec0")
             axes[0].set_aspect("equal")
 
             axes[1].scatter(X2[0], X2[1], s=4, alpha=0.18, color=BLUE)
             axes[1].set_title(f"Correlated X = LZ  (ρ = {rho_ch:.2f})", color="#cbd5e0")
-            axes[1].set_xlabel("X₁", color="#4a5568"); axes[1].set_ylabel("X₂", color="#4a5568")
+            axes[1].set_xlabel("X₁", color="#a0aec0"); axes[1].set_ylabel("X₂", color="#a0aec0")
 
             plt.tight_layout(); st.pyplot(fig); plt.close()
         except Exception:
             st.warning("Adjust parameters to see the plot.")
 
     st.markdown("""
-    **Design note:** Each of the 10,000 paths in this simulation is one GBM trajectory for the portfolio. 
-Rather than simulating individual stock prices, the model simulates the combined daily portfolio return 
-from a multivariate normal draw, then compounds it via `cumprod`. The fan chart is the aggregate of all paths.
+    **Implementation note:** `np.random.multivariate_normal(mean_returns, cov_matrix, T)` 
+performs this Cholesky transformation internally on every call inside the Monte Carlo loop — 
+the correlated daily returns it produces are X = μ + LZ, never the raw independent Z directly.
     """)
 
