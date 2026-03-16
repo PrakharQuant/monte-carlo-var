@@ -49,9 +49,9 @@ def dark_fig(figsize=(9, 4)):
     fig, ax = plt.subplots(figsize=figsize)
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
-    ax.tick_params(colors="#4a5568")
-    ax.xaxis.label.set_color("#4a5568")
-    ax.yaxis.label.set_color("#4a5568")
+    ax.tick_params(colors="#a0aec0")
+    ax.xaxis.label.set_color("#a0aec0")
+    ax.yaxis.label.set_color("#a0aec0")
     ax.title.set_color("#cbd5e0")
     for sp in ax.spines.values():
         sp.set_edgecolor(GREY)
