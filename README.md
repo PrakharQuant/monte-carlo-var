@@ -1,6 +1,6 @@
 # Monte Carlo VaR — Indian Equity Portfolio Risk Simulator
 
-# Monte Carlo VaR — Indian Equity Portfolio Risk Simulator
+
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://montecarlovar.streamlit.app)
 ![Python](https://img.shields.io/badge/python-3.9+-3776AB?style=flat&logo=python&logoColor=white)
