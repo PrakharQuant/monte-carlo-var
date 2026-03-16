@@ -24,7 +24,7 @@ st.markdown("""
 html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
 .section-label {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-    letter-spacing: 0.18em; text-transform: uppercase; color: #4a5568;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #a0aec0;
     margin: 1.8rem 0 0.6rem 0; display: block;
 }
 .callout {
@@ -47,8 +47,8 @@ GREEN = "#48bb78"; ORANGE = "#ed8936"; GREY = "#1e1e38"
 def dark_fig(figsize=(10, 4.5)):
     fig, ax = plt.subplots(figsize=figsize)
     fig.patch.set_facecolor(BG); ax.set_facecolor(BG)
-    ax.tick_params(colors="#4a5568")
-    ax.xaxis.label.set_color("#4a5568"); ax.yaxis.label.set_color("#4a5568")
+    ax.tick_params(colors="#a0aec0")
+    ax.xaxis.label.set_color("#a0aec0"); ax.yaxis.label.set_color("#a0aec0")
     ax.title.set_color("#cbd5e0")
     for sp in ax.spines.values(): sp.set_edgecolor(GREY)
     return fig, ax
