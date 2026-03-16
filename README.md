@@ -1,4 +1,4 @@
-# Monte Carlo VaR — Indian Equity Portfolio Risk Simulator
+# Monte Carlo VaR: Indian Equity Portfolio Risk Simulator
 
 
 
