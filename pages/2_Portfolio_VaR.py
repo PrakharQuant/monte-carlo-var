@@ -24,7 +24,7 @@ st.markdown("""
 html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
 .section-label {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-    letter-spacing: 0.18em; text-transform: uppercase; color: #4a5568;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #a0aec0;
     margin: 1.8rem 0 0.6rem 0; display: block;
 }
 .metric-card {
@@ -269,8 +269,8 @@ fig3.patch.set_facecolor(BG); ax3.set_facecolor(BG)
 im = ax3.imshow(corr.values, cmap="RdYlGn", vmin=-1, vmax=1, aspect="auto")
 plt.colorbar(im, ax=ax3, fraction=0.046, pad=0.04)
 ax3.set_xticks(range(len(tickers))); ax3.set_yticks(range(len(tickers)))
-ax3.set_xticklabels(selected_names, rotation=40, ha="right", color="#4a5568", fontsize=8)
-ax3.set_yticklabels(selected_names, color="#4a5568", fontsize=8)
+ax3.set_xticklabels(selected_names, rotation=40, ha="right", color="#a0aec0", fontsize=8)
+ax3.set_yticklabels(selected_names, color="#a0aec0", fontsize=8)
 ax3.set_title("Asset Correlation (Historical)", color="#cbd5e0")
 for i in range(len(tickers)):
     for j in range(len(tickers)):
