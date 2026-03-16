@@ -4,7 +4,7 @@ An interactive risk analytics platform for NSE-listed equity portfolios built wi
 The project is structured in two layers: a mathematical foundations module that builds intuition
 interactively, and a finance module that applies those concepts to real market data and industry-standard risk metrics.
 
-**Live App →** [share.streamlit.io](https://share.streamlit.io) *(deploy from this repo)*
+**Live App →** [montecarlovar.streamlit.app](https://montecarlovar.streamlit.app)
 
 ---
 
