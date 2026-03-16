@@ -124,9 +124,9 @@ with tab1:
         plt.close()
 
     st.markdown("""
-    **Why this matters for Monte Carlo:** Each simulated day draws a return from this distribution.
-    The mean drives the long-run direction; the standard deviation determines how wide the simulation
-    fan spreads. For 5 correlated assets we need the multivariate generalisation — covered in Tab 4.
+    **Implementation note:** Each simulated day in the Monte Carlo loop draws from this distribution. 
+Mean drives the long-run drift; standard deviation controls fan width. For 5 correlated assets 
+this generalises to the multivariate normal — covered in Tab 4.
     """)
 
 
@@ -261,10 +261,9 @@ with tab3:
         plt.close()
 
     st.markdown("""
-    **Connection to your VaR project:** Each simulation path in the Monte Carlo model is one GBM
-    trajectory for the portfolio. Instead of simulating individual stock prices, we simulate the
-    portfolio's combined daily return from a multivariate normal — then compound it via `cumprod`.
-    The fan chart you produced is exactly what you see here, aggregated across 10,000 paths.
+    **Design note:** Each of the 10,000 paths in this simulation is one GBM trajectory for the portfolio. 
+Rather than simulating individual stock prices, the model simulates the combined daily portfolio return 
+from a multivariate normal draw, then compounds it via `cumprod`. The fan chart is the aggregate of all paths.
     """)
 
 
@@ -336,10 +335,9 @@ with tab4:
         plt.tight_layout(); st.pyplot(fig); plt.close()
 
     st.markdown("""
-    **Why this matters:** Because all 5 returns are drawn together in a single call,
-    if HDFC Bank has a bad day in the simulation, ICICI Bank is also more likely to have
-    a bad day — reflecting their historical co-movement. The simulation captures correlation,
-    not just individual volatility.
+    **Design note:** Drawing all 5 returns in a single `multivariate_normal` call ensures co-movement 
+is preserved — if HDFC Bank has a bad simulated day, ICICI Bank is statistically more likely to as well, 
+reflecting their historical correlation.
     """)
 
 
@@ -415,9 +413,8 @@ with tab5:
             st.warning("Adjust parameters to see the plot.")
 
     st.markdown("""
-    **Connection to your project:** When NumPy calls `multivariate_normal(mean_returns, cov_matrix, T)`,
-    it factorises the covariance matrix via Cholesky internally, generates T rows of independent normals,
-    and transforms them. You don't see this step — but it is happening every single call inside
-    your 10,000-iteration Monte Carlo loop.
+    **Design note:** Each of the 10,000 paths in this simulation is one GBM trajectory for the portfolio. 
+Rather than simulating individual stock prices, the model simulates the combined daily portfolio return 
+from a multivariate normal draw, then compounds it via `cumprod`. The fan chart is the aggregate of all paths.
     """)
 
