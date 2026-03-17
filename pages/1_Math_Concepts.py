@@ -16,7 +16,32 @@ st.set_page_config(page_title="Math Concepts", page_icon="📐", layout="wide")
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
-html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
+html, body, [class*="css"] {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: justify;
+}
+
+/* Justify all paragraph text */
+p, li, div.stMarkdown p {
+    text-align: justify !important;
+}
+
+/* Allow tab labels to wrap onto two lines */
+button[data-baseweb="tab"] {
+    white-space: normal !important;
+    word-break: break-word !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    height: auto !important;
+    min-height: 48px !important;
+    max-width: 120px !important;
+}
+
+button[data-baseweb="tab"] p {
+    text-align: center !important;
+}
 .concept-header {
     font-family: 'IBM Plex Mono', monospace; color: #e94560;
     font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
