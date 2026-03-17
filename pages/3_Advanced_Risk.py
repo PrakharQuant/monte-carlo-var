@@ -23,7 +23,7 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap');
 html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; text-align: justify;}
 .section-label {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; text-align: justify;
     letter-spacing: 0.18em; text-transform: uppercase; color: #a0aec0;
     margin: 1.8rem 0 0.6rem 0; display: block;
 }
@@ -102,7 +102,7 @@ if not run_btn:
          "60-day rolling 1-day Historical VaR across the full history. "
          "Reveals how portfolio risk evolved over time: spikes mark crisis periods."),
     ]:
-        st.markdown(f"**{title}** — {desc}")
+        st.markdown(f"**{title}** : {desc}")
     st.stop()
 
 # ── Load & compute ────────────────────────────────────────────────────────
