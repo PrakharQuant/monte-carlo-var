@@ -30,7 +30,7 @@ html, body, [class*="css"] {
     margin-bottom: 2rem;
 }
 .hero-title {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     font-size: 2.2rem;
     font-weight: 600;
     color: #e94560;
@@ -53,7 +53,7 @@ html, body, [class*="css"] {
     border: 1px solid #e9456040;
     border-radius: 4px;
     padding: 3px 9px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     font-size: 0.72rem;
     margin: 2px 2px;
 }
@@ -72,7 +72,7 @@ html, body, [class*="css"] {
 }
 .card-icon  { font-size: 1.6rem; margin-bottom: 0.6rem; }
 .card-title {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     color: #e2e8f0;
     font-size: 0.92rem;
     font-weight: 600;
@@ -81,7 +81,7 @@ html, body, [class*="css"] {
 .card-body  { color: #718096; font-size: 0.87rem; line-height: 1.65; }
 /* ── Section labels ── */
 .section-label {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     color: #4a5568;
     font-size: 0.68rem;
     letter-spacing: 0.18em;
@@ -109,7 +109,7 @@ html, body, [class*="css"] {
     text-align: center;
 }
 .metric-value {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     font-size: 1.45rem;
     font-weight: 600;
     color: #e94560;
@@ -128,7 +128,7 @@ html, body, [class*="css"] {
     border-left: 3px solid #e94560;
     padding: 1rem 1.4rem;
     border-radius: 0 8px 8px 0;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     color: #cbd5e0;
     font-size: 0.86rem;
     line-height: 1.7;
@@ -156,7 +156,7 @@ html, body, [class*="css"] {
 /* ── Footer ── */
 .footer {
     color: #2d3748;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; text-align: justify;
     font-size: 0.72rem;
     margin-top: 3rem;
     padding-top: 1rem;
@@ -200,7 +200,7 @@ with c1:
         <div class="card-body">
             Five interactive modules covering the mathematical foundations:
             Normal distributions, covariance & correlation, Geometric Brownian Motion,
-            the Multivariate Normal, and the Cholesky decomposition — all with
+            the Multivariate Normal, and the Cholesky decomposition, all with
             live sliders and real-time plots.
         </div>
     </div>
@@ -250,7 +250,7 @@ with col_text:
     your portfolio loses more than ₹1.20 lakhs in the next 100 trading days.
 
     The **Monte Carlo approach** estimates this by simulating thousands of possible
-    future return scenarios drawn from the historical joint distribution of your assets —
+    future return scenarios drawn from the historical joint distribution of your assets, 
     rather than relying on a single closed-form formula. This makes it flexible:
     you can swap in fat-tailed distributions, apply stress scenarios, and compute
     any quantile of the resulting distribution.
