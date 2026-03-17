@@ -21,7 +21,7 @@ st.set_page_config(page_title="Advanced Risk", page_icon="⚠️", layout="wide"
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap');
-html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
+html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; text-align: justify;}
 .section-label {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
     letter-spacing: 0.18em; text-transform: uppercase; color: #a0aec0;
@@ -100,7 +100,7 @@ if not run_btn:
          "Shows how VaR changes under extreme but plausible conditions."),
         ("Rolling VaR",
          "60-day rolling 1-day Historical VaR across the full history. "
-         "Reveals how portfolio risk evolved over time — spikes mark crisis periods."),
+         "Reveals how portfolio risk evolved over time: spikes mark crisis periods."),
     ]:
         st.markdown(f"**{title}** — {desc}")
     st.stop()
@@ -206,7 +206,7 @@ with col_stats:
 st.markdown('<span class="section-label">2 · Historical VaR vs Monte Carlo VaR — Model Risk</span>', unsafe_allow_html=True)
 
 st.markdown("""
-**Historical VaR** uses actual observed past returns with no distribution assumption — fat tails
+**Historical VaR** uses actual observed past returns with no distribution assumption and fat tails
 are captured as they happened. **Monte Carlo VaR** assumes multivariate normality, which can
 underestimate tail risk. The gap between them is called **model risk**.
 """)
@@ -268,7 +268,7 @@ with col_ctrl:
     <b>Daily shock:</b> {shock/252*100:.4f}%<br><br>
     Simulates sustained bear market where all assets
     earn {abs(shock_pct)}% less per year than their
-    historical average — applied additively to
+    historical average, applied additively to
     the estimated mean returns.
     </div>
     """, unsafe_allow_html=True)
@@ -342,7 +342,7 @@ st.markdown("""
 <div class="insight">
 💡 The spike around early 2020 is the COVID-19 crash.
 The elevated band through 2022 reflects the Russia-Ukraine war and Fed rate hike cycle.
-Rolling VaR is how risk desks at banks monitor real-time portfolio risk — if it is rising
+Rolling VaR is how risk desks at banks monitor real-time portfolio risk. If it is rising
 steadily, the book's risk is increasing even if the point-in-time Monte Carlo VaR
 (computed from the full 5-year window) has not been recalculated.
 </div>
