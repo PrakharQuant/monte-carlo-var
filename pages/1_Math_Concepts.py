@@ -98,7 +98,7 @@ def style_axes(ax):
 
 
 st.title("📐 Math Concepts")
-st.caption("Interactive building blocks — adjust sliders to see the mathematics respond in real time.")
+st.caption("Interactive building blocks: adjust sliders to see the mathematics respond in real time.")
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "1 · Normal Distribution",
@@ -588,7 +588,7 @@ with tab6:
     st.markdown("#### VaR Estimate Convergence")
     st.markdown("""
     This tracks how the 95% VaR estimate evolves as more simulation paths are added.
-    It stabilises well before 10,000 — demonstrating why that is the standard
+    It stabilises well before 10,000, demonstrating why that is the standard
     minimum threshold in practice.
     """)
 
@@ -614,7 +614,7 @@ with tab6:
     plt.close()
 
     st.markdown("""
-    **Design note:** 10,000 simulations is the default in this project — it balances
+    **Design note:** 10,000 simulations is the default in this project as it balances
     statistical stability against compute time on Streamlit Community Cloud.
     CVaR and 99% VaR depend on a smaller tail sample (roughly 100 and 500 paths
     respectively at 10,000 simulations), so higher counts improve their accuracy
